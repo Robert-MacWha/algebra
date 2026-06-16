@@ -549,7 +549,7 @@ fn msm_bigint_wnaf<V: VariableBaseMSM>(
                 .build()
                 .unwrap()
                 .install(|| msm_bigint_wnaf_parallel::<V>(bases, scalars));
-            
+
             #[cfg(any(not(feature = "parallel"), target_arch = "wasm32"))]
             let result = msm_bigint_wnaf_parallel::<V>(bases, scalars);
 
